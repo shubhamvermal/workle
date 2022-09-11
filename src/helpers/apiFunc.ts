@@ -6,6 +6,7 @@ export async function axiosRequest(
     method: string,
     basicUrl: string,
     data = {},
+    fileType: String = "object",
     isData = true
   ) {
   
@@ -16,7 +17,7 @@ export async function axiosRequest(
       method: method,
       url: URL,
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': (fileType === "image") ? 'image/jpeg' : 'application/json'
       },
       ...(isData && { data: data }),
       withCredentials: true,

@@ -10,6 +10,10 @@ export const store = configureStore({
     // partner
     auth: auth,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
 
 export type AppDispatch = typeof store.dispatch;

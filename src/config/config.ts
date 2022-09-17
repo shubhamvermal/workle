@@ -9,3 +9,5 @@ export const ENV = {
       SERVER_URL: "https://example.com/api"
     },
   }
+
+export const image_server = "http://localhost:8080"

@@ -6,7 +6,6 @@ import { LeftArrowIcon } from '../../assets/Icons'
 import ImageUploader from '../../common/Forms/FileInput/ImageUploader'
 import InputField from '../../common/Forms/InputFields/InputField'
 import { Heading4 } from '../../common/Typography/Headings/Heading4'
-import { Heading5 } from '../../common/Typography/Headings/Heading5'
 import { Heading6 } from '../../common/Typography/Headings/Heading6'
 import Paragraph from '../../common/Typography/Paragraphs/Paragraph'
 import { addPartnerDocuments, getPartnerDocuments } from '../../store/partner/actions/partnerDocuments';
@@ -31,6 +30,7 @@ const PartnerDocuments = (props: any) => {
                 setPreviouslyAdded(true)
             }
         })()
+        //eslint-disable-next-line
     }, [])
 
 

@@ -8,14 +8,14 @@ export const CardWithList = () => {
       Latest Customers
     </h5>
     <a
-      href="#"
+      href="/"
       className="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500"
     >
       View all
     </a>
   </div>
   <div className="flow-root">
-    <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
+    <ul className="divide-y divide-gray-200 dark:divide-gray-700">
       <li className="py-3 sm:py-4">
         <div className="flex items-center space-x-4">
           <div className="flex-shrink-0">

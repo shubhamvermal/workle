@@ -1,24 +1,41 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { LeftArrowIcon } from '../../assets/Icons'
-import ImageUploader from '../../common/Forms/FileInput/ImageUploader'
-import ImagePreview from '../../common/Images/ImagePreview'
+import MultiImageUploader from '../../common/Forms/FileInput/MultiImageUploader'
+// import ImagePreview from '../../common/Images/ImagePreview'
 import { Heading4 } from '../../common/Typography/Headings/Heading4'
 import Paragraph from '../../common/Typography/Paragraphs/Paragraph'
+import { image_server } from '../../config/config'
 import useImagePreviewer from '../../hooks/useImagePreviewer'
-
-const projects: any = [
-    { id: "", img_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK7a0TCmJr37H6HlkUSLUWzFOWaKimDou_Lg&usqp=CAU" },
-    { id: "", img_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTdQfflN1Km7m0sQbV3qd7kxviMQkbB9s_Fw&usqp=CAU" },
-    { id: "", img_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1EzQRA0DyA_A7Lst0WkZ1tG87Gl5jOkIgbA&usqp=CAU" },
-    { id: "", img_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLq6XlurXTpjyfssVZsM5HZl29ZEiAi06rnA&usqp=CAU" },
-    { id: "", img_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhwSxlArilCv741q4fQz5keyHnJBz2nP5s3Q&usqp=CAU" },
-    { id: "", img_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvqvXickWkpRpS-AES2jEWEra_URDGlVQvTA&usqp=CAU" },
-];
+import { addPartnerProjects, getPartnerProjects } from '../../store/partner/actions/partnerProjects'
 
 const PartnerProjects = () => {
+    const dispatch = useDispatch();
     const [imgPrev, imagePreview]: any = useImagePreviewer()
+    // const [profilePic, setProfilePic] = useState<any>(null);
+    const [projects, setProjects] = useState<any>([]);
+    const [projectsPrev, setProjectsPrev] = useState<any>([]);
     const navigate = useNavigate();
+
+
+    const handleSaveAllImages = async () => {
+        const picResponse = await dispatch(addPartnerProjects(projects));
+        console.log("🚀 ~ file: PartnerProjects.tsx ~ line 24 ~ handleSaveAllImages ~ picResponse", picResponse)
+    }
+
+    useEffect(() => {
+        (async () => {
+            const res = await dispatch(getPartnerProjects())
+            console.log("🚀 ~ file: PartnerProjects.tsx ~ line 30 ~ res", res)
+            if (res.payload.success && res.payload.data) {
+                let projectList = res.payload.data.map((img:any)=> image_server + img)
+                setProjectsPrev(projectList)
+            }
+        })()
+        // eslint-disable-next-line
+    }, [])
+
     return (
         <>
             {/* header */}
@@ -35,8 +52,17 @@ const PartnerProjects = () => {
             <hr />
             {/* body */}
             <div className={"flex flex-wrap gap-1 p-2"}>
-                <ImageUploader className={"w-[120px] h-[120px]"} label={"Add Photos"} />
-                {projects.map(({ id, img_url }: any, index: number) => <img onClick={imgPrev.bind(this)} key={index} src={img_url} className={"w-[120px] h-[120px] bg-red-400"} alt={""} />)}
+                <MultiImageUploader
+                    className={"w-[120px] h-[120px]"}
+                    label={"Add Photos"}
+                    onUpload={setProjects}
+                    setPreview={setProjectsPrev}
+                />
+                {console.log("🚀 ~ file: PartnerProjects.tsx ~ line 56 ~ PartnerProjects ~ projects", projects)}
+                {projectsPrev.map((img_url: any, index: number) => <img onClick={imgPrev.bind(this)} key={index} src={img_url} className={"w-[120px] h-[120px] bg-red-400"} alt={""} />)}
+            </div>
+            <div className={"h-12 flex justify-center items-center p-4 bg-white dark:bg-gray-700"}>
+                <button onClick={handleSaveAllImages} className={"bg-blue-800 rounded-2xl text-white px-8 py-2 w-full"}>submit details</button>
             </div>
         </>
     )

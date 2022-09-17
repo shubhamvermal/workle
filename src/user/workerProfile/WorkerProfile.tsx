@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { BookmarkIcon, LeftArrowIcon, MessageIcon, PhoneIcon, SortIcon, StarIcon } from '../../assets/Icons'
 import { DefaultCarousel } from '../../common/Carousel/DefaultCarousel'
@@ -13,9 +13,14 @@ const review = [
     { name: "shubham verma", date: '22/01/2020', rating: 4.5, review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam." }
 ]
 const WorkerProfile = () => {
-    const [reviewList, setReviewList] = useState(review)
+    const [reviewList, setReviewList] = useState<any[]>([])
     // const history  = useHistory();
     const navigate = useNavigate();
+
+    useEffect(() => {
+        setReviewList(review)
+    }, [])
+
     return (
         <>
             {/* Header */}

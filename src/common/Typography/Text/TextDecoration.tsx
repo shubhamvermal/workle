@@ -4,14 +4,14 @@ export const TextDecoration = () => {
     return <p className="font-light text-gray-500 dark:text-gray-400">
     Track work across the enterprise through an open, collaborative platform.{" "}
     <a
-      href="#"
+      href="/"
       className="font-semibold text-gray-900 underline dark:text-white decoration-indigo-500"
     >
       Link issues across Jira
     </a>{" "}
     and ingest data from other{" "}
     <a
-      href="#"
+      href="/"
       className="font-semibold text-gray-900 underline dark:text-white decoration-blue-500 decoration-double"
     >
       software development
@@ -22,21 +22,21 @@ export const TextDecoration = () => {
       information to rapidly respond to{" "}
     </a>
     <a
-      href="#"
+      href="/"
       className="font-semibold text-gray-900 underline dark:text-white decoration-green-500 decoration-dotted"
     >
       requests
     </a>
     ,{" "}
     <a
-      href="#"
+      href="/"
       className="font-semibold text-gray-900 underline dark:text-white decoration-red-500 decoration-dashed"
     >
       incidents
     </a>
     , and{" "}
     <a
-      href="#"
+      href="/"
       className="font-semibold text-gray-900 underline dark:text-white decoration-sky-500 decoration-wavy"
     >
       changes

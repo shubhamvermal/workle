@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { LeftArrowIcon, SortIcon, StarIcon, TrendIcon } from '../../assets/Icons';
+import { LeftArrowIcon, StarIcon, TrendIcon } from '../../assets/Icons';
 import SearchField from '../../common/Forms/InputFields/SearchField';
 import { Heading6 } from '../../common/Typography/Headings/Heading6'
 
@@ -41,10 +41,15 @@ const trend = [
 
 const SearchPage = () => {
     const navigate = useNavigate();
-    const [workersList, setWorkersList] = useState(workers)
-    const [trendList, setTrendList] = useState(trend)
+    const [workersList, setWorkersList] = useState<any[]>([])
+    const [trendList, setTrendList] = useState<any[]>([])
     const [searchValue, setSearchValue] = useState('');
 
+    useEffect(() => {
+        setWorkersList(workers)
+        setTrendList(trend)
+        // eslint-disable-next-line
+    }, [])
 
     return (
         <div>

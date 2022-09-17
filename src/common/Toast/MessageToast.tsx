@@ -20,7 +20,7 @@ export const MessageToast = () => {
                     Hi Neil, thanks for sharing your thoughts regarding Flowbite.
                 </div>
                 <a
-                    href="#"
+                    href="/"
                     className="inline-flex px-2.5 py-1.5 text-xs font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-800"
                 >
                     Reply

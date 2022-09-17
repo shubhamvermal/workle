@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { LeftArrowIcon, SortIcon, StarIcon } from '../../assets/Icons';
 import SearchField from '../../common/Forms/InputFields/SearchField';
@@ -24,6 +24,10 @@ const workers = [
 const WorkerList = () => {
     const navigate = useNavigate();
     const [workersList, setWorkersList] = useState(workers)
+    
+    useEffect(()=>{
+        setWorkersList(workers)
+    }, [])
     return (
         <div>
             <div className={"flex items-center p-4 gap-4 bg-white sticky top-0"}>

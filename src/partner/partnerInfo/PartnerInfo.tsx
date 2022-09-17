@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-import { Field, Form, reduxForm } from 'redux-form'
-import { LeftArrowIcon } from '../../assets/Icons'
-import ImageUploader from '../../common/Forms/FileInput/ImageUploader'
-import ReduxImageUploader from '../../common/Forms/FileInput/ReduxImageUploader'
-import InputField from '../../common/Forms/InputFields/InputField'
-import { Heading4 } from '../../common/Typography/Headings/Heading4'
-import Paragraph from '../../common/Typography/Paragraphs/Paragraph'
-import { verifyOtp } from '../../store/partner/actions/auth'
-import { addPartnerPersonalDetails, addPartnerProfilePic, getPersonalDetails } from '../../store/partner/actions/personalDetails'
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { Field, Form, reduxForm } from 'redux-form';
+import { LeftArrowIcon } from '../../assets/Icons';
+import SingleImageUploader from '../../common/Forms/FileInput/SingleImageUploader';
+import InputField from '../../common/Forms/InputFields/InputField';
+import { Heading4 } from '../../common/Typography/Headings/Heading4';
+import Paragraph from '../../common/Typography/Paragraphs/Paragraph';
+import { image_server } from '../../config/config';
+import { addPartnerPersonalDetails, addPartnerProfilePic, getPersonalDetails } from '../../store/partner/actions/personalDetails';
 
 const FORM_NAME = 'partner_info'
 
@@ -18,24 +17,29 @@ const PartnerInfo = (props: any) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [previouslyAdded, setPreviouslyAdded] = useState(false)
-    const [profilePic, setProfilePic] = useState(null)
+    const [profilePic, setProfilePic] = useState<any>(null)
+    const [profileBinary, setUploadBinary] = useState<any>(null)
 
 
     useEffect(() => {
         (async () => {
             const res = await dispatch(getPersonalDetails())
-            if (res.payload.success) {
+            if (res.payload.success && res.payload.data) {
                 initialize(res.payload.data)
+                res.payload.data.profile && setProfilePic(image_server + res.payload.data.profile)
                 setPreviouslyAdded(true)
             }
         })()
+        // eslint-disable-next-line
     }, [])
 
 
     const handleSignUpForm = async (values: any) => {
         console.log("🚀 ~ file: PartnerInfo.tsx ~ line 16 ~ handleSignUpForm ~ values", values)
-        const picResponse = await dispatch(addPartnerProfilePic(profilePic));
-        const response = await dispatch(addPartnerPersonalDetails(values));
+        // const picResponse = await dispatch(addPartnerProfilePic(profileBinary));
+        // const response = await dispatch(addPartnerPersonalDetails(values));
+        await dispatch(addPartnerProfilePic(profileBinary));
+        await dispatch(addPartnerPersonalDetails(values));
         // console.log("🚀 ~ file: PartnerInfo.tsx ~ line 24 ~ handleSignUpForm ~ response", response)
         // if (response.payload.success){
         //     navigate('/partner/profile')
@@ -59,14 +63,12 @@ const PartnerInfo = (props: any) => {
             <Form className="mt-8 space-y-3" onSubmit={handleSubmit(handleSignUpForm)}>
                 <div className="p-4">
                     <div className="flex gap-4 justify-between">
-                        {/* <ImageUploader label={'Add Photo'} /> */}
-                        {/* <Field
-                            label={'Add Photo'}
-                            name={'profile'}
-                            component={
-                            }
-                            /> */}
-                            <ReduxImageUploader label={"Add Photo"} onUpload={setProfilePic}/>
+                        <SingleImageUploader
+                            image={profilePic}
+                            label={"Add Photo"}
+                            onUpload={setUploadBinary}
+                            setPreview={setProfilePic}
+                        />
                         <div>
                             <div>
                                 <Field

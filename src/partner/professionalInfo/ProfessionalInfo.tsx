@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Field, Form, reduxForm } from 'redux-form';
 import { LeftArrowIcon } from '../../assets/Icons';
 import ImageUploader from '../../common/Forms/FileInput/ImageUploader';
 import InputField from '../../common/Forms/InputFields/InputField';
+import Select from '../../common/Forms/Select/Select';
 import { Heading4 } from '../../common/Typography/Headings/Heading4';
 import Paragraph from '../../common/Typography/Paragraphs/Paragraph';
+import useCatagoryProfession from '../../hooks/useCatagoryProfession';
 import useImagePreviewer from '../../hooks/useImagePreviewer';
 import { addProfessionalDetails, getProfessionalDetails } from '../../store/partner/actions/professionalDetails';
 
@@ -26,11 +28,11 @@ const certificates: any = [
 
 const ProfessionalInfo = (props: any) => {
     const { handleSubmit, initialize } = props;
-    const [setImgPrev, imagePreview]: any = useImagePreviewer()
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const [setImgPrev, imagePreview]: any = useImagePreviewer()
+    const { catagoryList, professionList } = useCatagoryProfession()
     const [previouslyAdded, setPreviouslyAdded] = useState(false)
-
 
     useEffect(() => {
         (async () => {
@@ -40,8 +42,8 @@ const ProfessionalInfo = (props: any) => {
                 setPreviouslyAdded(true)
             }
         })()
+        // eslint-disable-next-line
     }, [])
-
 
     const handleSignUpForm = async (values: any) => {
         console.log("🚀 ~ file: PartnerInfo.tsx ~ line 16 ~ handleSignUpForm ~ values", values)
@@ -50,6 +52,13 @@ const ProfessionalInfo = (props: any) => {
         if (response.payload.success) {
             navigate('/partner/profile')
         }
+    }
+
+    const getCatagoryOptions = (list: any) => {
+        return catagoryList.map(({ name, _id }: any) => ({ label: name, value: _id }))
+    }
+    const getProfessionOptions = (list: any) => {
+        return professionList.map(({ name, _id }: any) => ({ label: name, value: _id }))
     }
 
 
@@ -113,18 +122,21 @@ const ProfessionalInfo = (props: any) => {
                     <div className="flex gap-4 justify-between">
                         <div>
                             <Field
-                                component={InputField}
+                                // component={InputField}
+                                component={Select}
                                 type={'text'}
                                 label={'catagory'}
+                                options={getCatagoryOptions(catagoryList)}
                                 placeholder={'Choose Catagory'}
                                 name={'catagory'}
                             />
                         </div>
                         <div>
                             <Field
-                                component={InputField}
-                                type={'tel'}
+                                component={Select}
+                                type={'select'}
                                 label={'work'}
+                                options={getProfessionOptions(catagoryList)}
                                 placeholder={'Choose Work'}
                                 name={'profession'}
                             />
@@ -150,13 +162,13 @@ const ProfessionalInfo = (props: any) => {
                     </div>
                     <div className="flex gap-2 overflow-auto p-3">
                         <ImageUploader className={"!min-w-[120px] !h-[100px]"} label={"Add Photo"} />
-                        {certificates.map(({ id, img_url }: any, index: number) => <img onClick={setImgPrev.bind(this)} className={"!min-w-[120px] !h-[100px]"} src={img_url} alt={""} />)}
+                        {certificates.map(({ id, img_url }: any, index: number) => <img key={index} onClick={setImgPrev.bind(this)} className={"!min-w-[120px] !h-[100px]"} src={img_url} alt={""} />)}
                     </div>
                 </div>
 
                 {/* footer */}
                 <div className={"h-12 flex justify-center items-center p-4 bg-white dark:bg-gray-700"}>
-                    <button className={"bg-blue-800 rounded-2xl text-white px-8 py-2 w-full"}>submit details</button>
+                    <button className={"bg-blue-800 rounded-2xl text-white px-8 py-2 w-full"}>{previouslyAdded ? 'updte details' : 'submit details'}</button>
                 </div>
             </Form>
         </>
@@ -164,14 +176,3 @@ const ProfessionalInfo = (props: any) => {
 }
 
 export default reduxForm({ form: FORM_NAME })(ProfessionalInfo);
-
-
-
-// name
-// catagory
-// work
-// experience
-// phone number
-// alternate number
-// email
-// highest schooling / degree / diploma certificate images

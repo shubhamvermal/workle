@@ -1,10 +1,9 @@
-import React from 'react'
 import { useDispatch } from 'react-redux';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Field, Form, reduxForm } from 'redux-form';
 import PrimaryInputField from '../../common/Forms/InputFields/PrimaryInputField';
 import { Heading4 } from '../../common/Typography/Headings/Heading4';
-import { loginUser, authUser } from '../../store/partner/actions/auth';
+import { authUser } from '../../store/partner/actions/auth';
 import { AppDispatch } from '../../store/store';
 
 const FORM_NAME = "auth_form";

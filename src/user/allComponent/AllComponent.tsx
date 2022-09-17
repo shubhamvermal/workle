@@ -1,4 +1,4 @@
-import { lazy, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import { ColorOption } from '../../common/Accordion/ColorOption';
 import { Flush } from '../../common/Accordion/Flush';
@@ -47,7 +47,6 @@ import { PopUp } from '../../common/Modals/PopUp';
 import { Pagination } from '../../common/Pagination/Pagination';
 import { ProgressBar } from '../../common/ProgressBar/ProgressBar';
 import { StarRating } from '../../common/Rating/StarRating';
-import { Sidebar } from '../../common/Sidebar/Sidebar';
 import { InteractiveTab } from '../../common/Tabs/InteractiveTab';
 import { UnderLineTab } from '../../common/Tabs/UnderLineTab';
 import { MessageToast } from '../../common/Toast/MessageToast';

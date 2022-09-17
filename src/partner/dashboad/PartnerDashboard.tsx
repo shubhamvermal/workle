@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Route, Routes, useNavigate } from 'react-router-dom'
-import { BurgerMenuIcon, MessageIcon, MoonIcon, SunIcon, NotificationIcon, TaskIcon, TranslateIcon, UserIcon } from '../../assets/Icons'
+import { BurgerMenuIcon, MessageIcon, MoonIcon, SunIcon, NotificationIcon, TaskIcon, UserIcon } from '../../assets/Icons'
 import LanguageSelector from '../../componets/LanguageSelector'
 import { toggleTheme } from '../../helpers/themeFunc'
 import ChatsPage from '../chat/ChatPage'

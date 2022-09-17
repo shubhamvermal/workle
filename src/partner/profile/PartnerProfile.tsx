@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { BurgerMenuIcon, NotificationIcon, TranslateIcon } from '../../assets/Icons'
+// import { BurgerMenuIcon, NotificationIcon, TranslateIcon } from '../../assets/Icons'
 import { RightConeIcon } from '../../assets/Icons/RightConeIcon'
 import { Heading5 } from '../../common/Typography/Headings/Heading5'
 import { Heading6 } from '../../common/Typography/Headings/Heading6'

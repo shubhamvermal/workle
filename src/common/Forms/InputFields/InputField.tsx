@@ -33,8 +33,7 @@ const InputField = (props: InputFieldTypes) => {
         required,
         labelClass,
         inputClass,
-        input,
-        ...rest
+        input
     } = props
     // console.log("🚀 ~ file: InputField.tsx ~ line 36 ~ InputField ~ props", props)
     

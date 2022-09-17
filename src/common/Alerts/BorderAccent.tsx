@@ -22,7 +22,7 @@ export const BorderAccent = () => {
     </svg>
     <div className="ml-3 text-sm font-medium text-blue-700">
       A simple info alert with an{" "}
-      <a href="#" className="font-semibold underline hover:text-blue-800">
+      <a href="/" className="font-semibold underline hover:text-blue-800">
         example link
       </a>
       . Give it a click if you like.
@@ -68,7 +68,7 @@ export const BorderAccent = () => {
     </svg>
     <div className="ml-3 text-sm font-medium text-red-700">
       A simple danger alert with an{" "}
-      <a href="#" className="font-semibold underline hover:text-red-800">
+      <a href="/" className="font-semibold underline hover:text-red-800">
         example link
       </a>
       . Give it a click if you like.
@@ -114,7 +114,7 @@ export const BorderAccent = () => {
     </svg>
     <div className="ml-3 text-sm font-medium text-green-700">
       A simple success alert with an{" "}
-      <a href="#" className="font-semibold underline hover:text-green-800">
+      <a href="/" className="font-semibold underline hover:text-green-800">
         example link
       </a>
       . Give it a click if you like.
@@ -160,7 +160,7 @@ export const BorderAccent = () => {
     </svg>
     <div className="ml-3 text-sm font-medium text-yellow-700">
       A simple danger alert with an{" "}
-      <a href="#" className="font-semibold underline hover:text-yellow-800">
+      <a href="/" className="font-semibold underline hover:text-yellow-800">
         example link
       </a>
       . Give it a click if you like.
@@ -207,7 +207,7 @@ export const BorderAccent = () => {
     <div className="ml-3 text-sm font-medium text-gray-700 dark:text-gray-300">
       A simple dark alert with an{" "}
       <a
-        href="#"
+        href="/"
         className="font-semibold underline hover:text-gray-800 dark:hover:text-white"
       >
         example link

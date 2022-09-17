@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import { BurgerMenuIcon, NotificationIcon, TranslateIcon } from '../../assets/Icons'
-import { Heading5 } from '../../common/Typography/Headings/Heading5'
+import React, { useEffect, useState } from 'react'
+// import { BurgerMenuIcon, NotificationIcon, TranslateIcon } from '../../assets/Icons'
+// import { Heading5 } from '../../common/Typography/Headings/Heading5'
 
 const jobs: any = [
     {},
@@ -37,11 +37,17 @@ const jobs: any = [
 
 const JobsPage = () => {
     const [jobsList, setJobsList] = useState(jobs)
+    
+    useEffect(() => {
+        setJobsList(jobs)
+        // eslint-disable-next-line
+    }, [])
+
     return (
         <div className={"bg-white p-4 mt-1 dark:bg-gray-700"}>
 
             <ul className="divide-y divide-gray-200 dark:divide-gray-700 pb-[100px]">
-                {jobsList.map(({ }: any, index: number) => <li key={index} className="py-3 sm:py-4">
+                {jobsList.map((x: any, index: number) => <li key={index} className="py-3 sm:py-4">
                     <div className="flex items-center space-x-4">
                         <div className="flex-shrink-0">
                             <img className="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-1.jpg" alt="" />
@@ -67,9 +73,9 @@ const JobsPage = () => {
 export default JobsPage
 
 
-const Nojobs = () => <div
-    className={"flex justify-center items-center h-full"}
-    style={{ height: 'calc(100vh - 59px)' }}
->
-    <Heading5>Welcome, No jobs available now.</Heading5>
-</div>
+// const Nojobs = () => <div
+//     className={"flex justify-center items-center h-full"}
+//     style={{ height: 'calc(100vh - 59px)' }}
+// >
+//     <Heading5>Welcome, No jobs available now.</Heading5>
+// </div>

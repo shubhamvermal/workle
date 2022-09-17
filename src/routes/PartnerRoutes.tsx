@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 // component should be lazy import
+
 import PartnerDashboard from '../partner/dashboad/PartnerDashboard';
 import PartnerInfo from '../partner/partnerInfo/PartnerInfo';
 import PartnerProjects from '../partner/partnerProjects/PartnerProjects';

@@ -1,7 +1,55 @@
 import React from 'react'
+// import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+// import required modules
+// import { Autoplay, Pagination, Navigation } from "swiper";
 
 export const DefaultCarousel = () => {
     return (
+        <>
+         {/* <Swiper
+                spaceBetween={30}
+                centeredSlides={true}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                loop={true}
+                pagination={{
+                    clickable: true,
+                }}
+                navigation={true}
+                modules={[Autoplay, Pagination, Navigation]}
+                className="mySwiper"
+            >
+                <SwiperSlide>
+                    <div
+                        className="object-fill w-full h-96 bg-red-400"
+                        // src="https://cdn.pixabay.com/photo/2022/03/20/15/40/nature-7081138__340.jpg"
+                        // alt="slide 1"
+                    />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img
+                        className="object-fill w-full h-96"
+                        src="https://cdn.pixabay.com/photo/2022/07/24/17/55/wind-energy-7342177__340.jpg"
+                        alt="slide 2"
+                    />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img
+                        className="object-fill w-full h-96"
+                        src="https://cdn.pixabay.com/photo/2022/07/26/03/35/jogger-7344979__340.jpg"
+                        alt="slide 3"
+                    />
+                </SwiperSlide>
+            </Swiper> */}
+
         <div id="default-carousel" className="relative" data-carousel="static">
             {/* Carousel wrapper */}
             <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
@@ -116,5 +164,6 @@ export const DefaultCarousel = () => {
                 </span>
             </button>
         </div>
+        </>
     )
 }

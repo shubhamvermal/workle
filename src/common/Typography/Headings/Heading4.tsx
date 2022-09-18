@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
-type Heading4Types = {}
+type Heading4Types = {
+    children: ReactNode;
+}
 
 export const Heading4 = (props: Heading4Types) => {
-    return <h4 className="text-2xl font-bold dark:text-white">Heading 4</h4>
+    const { children } = props
+    return <h4 className="text-2xl font-bold dark:text-white">{children}</h4>
 
 }

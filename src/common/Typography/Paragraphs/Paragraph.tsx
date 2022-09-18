@@ -1,5 +1,13 @@
-import React from 'react'
+import classNames from 'classnames';
+import React, { ReactNode } from 'react'
 
-export const Paragraph = () => {
-    return <p className="font-light text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions.Accelerate critical development work, eliminate toil, and deploy changes with ease, with a complete audit trail for every change.</p>
+type ParagraphTypes = {
+    children: ReactNode;
+    className?: string;
 }
+const Paragraph = (props: ParagraphTypes) => {
+    const { children, className } = props;
+    return <p className={classNames("font-light text-gray-500 dark:text-gray-400", className)}>{children}</p>
+}
+
+export default Paragraph;

@@ -54,7 +54,7 @@ export const Sidebar = () => {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="#"
+                  href="/"
                   className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   <svg
@@ -109,7 +109,7 @@ export const Sidebar = () => {
                 <ul id="dropdown-example" className="hidden py-2 space-y-2">
                   <li>
                     <a
-                      href="#"
+                      href="/"
                       className="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                     >
                       Products
@@ -117,7 +117,7 @@ export const Sidebar = () => {
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href="/"
                       className="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                     >
                       Billing
@@ -125,7 +125,7 @@ export const Sidebar = () => {
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href="/"
                       className="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                     >
                       Invoice
@@ -135,7 +135,7 @@ export const Sidebar = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/"
                   className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   <svg
@@ -155,7 +155,7 @@ export const Sidebar = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/"
                   className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   <svg
@@ -176,7 +176,7 @@ export const Sidebar = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/"
                   className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   <svg
@@ -197,7 +197,7 @@ export const Sidebar = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/"
                   className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   <svg
@@ -218,7 +218,7 @@ export const Sidebar = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/"
                   className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   <svg
@@ -239,7 +239,7 @@ export const Sidebar = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/"
                   className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   <svg

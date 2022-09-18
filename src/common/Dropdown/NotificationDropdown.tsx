@@ -42,7 +42,7 @@ export const NotificationDropdown = () => {
     </div>
     <div className="divide-y divide-gray-100 dark:divide-gray-700">
       <a
-        href="#"
+        href="/"
         className="flex py-3 px-4 hover:bg-gray-100 dark:hover:bg-gray-700"
       >
         <div className="flex-shrink-0">
@@ -78,7 +78,7 @@ export const NotificationDropdown = () => {
         </div>
       </a>
       <a
-        href="#"
+        href="/"
         className="flex py-3 px-4 hover:bg-gray-100 dark:hover:bg-gray-700"
       >
         <div className="flex-shrink-0">
@@ -116,7 +116,7 @@ export const NotificationDropdown = () => {
         </div>
       </a>
       <a
-        href="#"
+        href="/"
         className="flex py-3 px-4 hover:bg-gray-100 dark:hover:bg-gray-700"
       >
         <div className="flex-shrink-0">
@@ -158,7 +158,7 @@ export const NotificationDropdown = () => {
         </div>
       </a>
       <a
-        href="#"
+        href="/"
         className="flex py-3 px-4 hover:bg-gray-100 dark:hover:bg-gray-700"
       >
         <div className="flex-shrink-0">
@@ -200,7 +200,7 @@ export const NotificationDropdown = () => {
         </div>
       </a>
       <a
-        href="#"
+        href="/"
         className="flex py-3 px-4 hover:bg-gray-100 dark:hover:bg-gray-700"
       >
         <div className="flex-shrink-0">
@@ -236,7 +236,7 @@ export const NotificationDropdown = () => {
       </a>
     </div>
     <a
-      href="#"
+      href="/"
       className="block py-2 text-sm font-medium text-center text-gray-900 bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white"
     >
       <div className="inline-flex items-center ">

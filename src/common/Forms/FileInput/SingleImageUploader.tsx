@@ -1,7 +1,5 @@
-import React, { ReactNode, useEffect, useState } from 'react'
-import classNames from 'classnames'
+import { ReactNode, useState } from 'react'
 import ImageUploader from './ImageUploader'
-import { image_server } from '../../../config/config'
 
 type SingleImageUploaderTypes = {
     name?: string;
